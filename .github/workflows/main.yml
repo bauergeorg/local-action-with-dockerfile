@@ -28,6 +28,9 @@ jobs:
       # Runs a build job
       - name: Run a one-line script
         run: python3 build.py
+        with:
+          name: output
+          path: myfile.txt
           
       # Runs a test job
       - name: Run test
