@@ -1,6 +1,6 @@
 from special_functions import *
 
-testVar = [0, 2, 5, 6, 8, 12]
+testVar = [0, 2, 5, 6, 8.1, 12]
 
 for i in testVar: 
     x = my_favorite_math_function(str(i))
