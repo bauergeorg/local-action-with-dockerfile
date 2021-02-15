@@ -28,6 +28,8 @@ jobs:
       # Runs a build job
       - name: Run a one-line script
         run: python3 build.py
+      - name: Upload result of build job
+        uses: actions/upload-artifact@v2
         with:
           name: output
           path: myfile.txt
