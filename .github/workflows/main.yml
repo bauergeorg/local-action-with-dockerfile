@@ -29,7 +29,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
       # Use own action: uses an own docker container created by a dockerfile
-      - name: test
+      - name: Run docker container with test.py
         uses: ./.github/actions/my-action
       # Runs some prints
       - name: Show version
