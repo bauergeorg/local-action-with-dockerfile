@@ -21,9 +21,12 @@ jobs:
     # The type of runner that the job will run on
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # Runs a test job
+      - name: haha
+        run: ls
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: test
-        uses: ./
+        uses: ./.actions
       # build job
       - name: Upload result of build job
         uses: actions/upload-artifact@v2
