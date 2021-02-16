@@ -23,7 +23,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: test
-        uses: ./.actions
+        uses: .
       # build job
       - name: Upload result of build job
         uses: actions/upload-artifact@v2
