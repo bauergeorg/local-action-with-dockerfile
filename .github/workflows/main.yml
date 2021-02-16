@@ -28,7 +28,7 @@ jobs:
       - name: List Dir
         run: ls
       - name: Build Image
-        run: docker build --file Dockerfile --tag docker-img .
+        run: docker build --tag docker-img .
       - name: Run Container
         run: docker run -it -d --name docker-ctr docker-img
       - name: Run a one-line script
