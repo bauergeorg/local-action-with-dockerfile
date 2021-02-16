@@ -29,6 +29,14 @@ jobs:
     - name: Hello world action step
       id: hello
       uses: actions/hello-world-docker-action@v1
+    - uses: docker/build-push-action@v1
+      with:
+        repository: test-image
+        push: false
+    - uses: addnab/docker-run-action@v2
+      with:
+        image: test-image:latest
+        run: echo "hello world"
     # Use the output from the `hello` step
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
