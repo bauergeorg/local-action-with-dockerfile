@@ -1,1 +1,0 @@
-echo "Hast du Zahlen"
