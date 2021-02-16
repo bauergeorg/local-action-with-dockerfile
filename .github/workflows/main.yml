@@ -20,12 +20,24 @@ jobs:
     # The type of runner that the job will run on
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # Runs some prints
+      - name: Show version
+        run: |
+            python3 --version
+            cat /etc/os-release
       # Checks-out your repository under $GITHUB_WORKSPACE
       - name: Check out repository
         uses: actions/checkout@v2
       # Use own action: uses an own docker container created by a dockerfile
       - name: test
         uses: ./.github/actions/my-action
+      # Runs some prints
+      - name: Show version
+        run: |
+            python3 --version
+            cat /etc/os-release
+      # Runs a test job
+      - name: Run test
         run: python3 test.py
       # build job
       - name: Upload result of build job
@@ -33,7 +45,6 @@ jobs:
         with:
           name: output
           path: myfile.txt
-          
       # Runs a test job
       - name: Run test
         run: python3 test.py
