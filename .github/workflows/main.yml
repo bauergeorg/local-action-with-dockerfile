@@ -21,30 +21,25 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs some prints
-      - name: Show version
+      - name: Show version information of vm
         run: |
-            python3 --version
             cat /etc/os-release
+            python3 --version
       # Checks-out your repository under $GITHUB_WORKSPACE
       - name: Check out repository
         uses: actions/checkout@v2
-      # Use own action: uses an own docker container created by a dockerfile
+      # Use own action: uses an own docker container created by a dockerfile with entrypoint.sh
       - name: Run docker container with test.py
         uses: ./.github/actions/my-action
-      # Runs some prints
-      - name: Show version
-        run: |
-            python3 --version
-            cat /etc/os-release
-      # Runs a test job
+      # Runs a test job at VM
       - name: Run test
         run: python3 test.py
-      # build job
+      # Runs a build job
+      - name: Build job
+        run: python3 build.py
+      # Build job
       - name: Upload result of build job
         uses: actions/upload-artifact@v2
         with:
           name: output
           path: myfile.txt
-      # Runs a test job
-      - name: Run test
-        run: python3 test.py

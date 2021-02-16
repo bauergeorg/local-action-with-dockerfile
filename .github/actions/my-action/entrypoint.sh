@@ -1,7 +1,7 @@
 #!/bin/sh -l
 
-echo "--------- Print Version ---------"
-python3 --version
+echo "--------- Show version information of docker container ---------"
 cat /etc/os-release
-echo "--------- Run Test ---------"
+python3 --version
+echo "--------- Run test at docker container ---------"
 python3 test.py
