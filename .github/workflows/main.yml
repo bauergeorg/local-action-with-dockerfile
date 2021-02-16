@@ -23,7 +23,7 @@ jobs:
     steps:
       # Runs a test job
       - name: haha
-        run: ls
+        run: /bin/bash ls
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: test
         uses: ./.actions
