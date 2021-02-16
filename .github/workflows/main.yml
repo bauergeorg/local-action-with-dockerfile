@@ -16,25 +16,14 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  dock:
     # The type of runner that the job will run on
-    runs:
-      using: 'docker'
-      image: 'Dockerfile'
-
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      #- uses: actions/checkout@v2
-      # Runs a build job
-      - name: List Dir
-        run: ls
-      #- name: Build Image
-      #  run: docker build --tag docker-img .
-     # - name: Run Container
-     #   run: docker run -it -d --name docker-ctr docker-img
-     # - name: Run a one-line script
-     #   run: docker exec -it docker-ctr python3 build.py
+      - name: test
+        uses: actions/MyFirstProject@v1
+      # build job
       - name: Upload result of build job
         uses: actions/upload-artifact@v2
         with:

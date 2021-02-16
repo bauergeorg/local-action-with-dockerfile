@@ -1,0 +1,7 @@
+# action.yml
+name: 'Hello World'
+description: 'My first test'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  entrypoint: 'main.sh'
