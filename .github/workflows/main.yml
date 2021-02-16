@@ -24,6 +24,8 @@ jobs:
     steps:
     - name: Check Python Version
       run: python3 --version
+    - name: Check Linux Version
+      run: cat /etc/os-release
     - name: Hello world action step
       id: hello
       uses: actions/hello-world-docker-action@v1
