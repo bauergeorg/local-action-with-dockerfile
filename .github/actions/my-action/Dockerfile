@@ -12,5 +12,7 @@ RUN apt-get install --no-install-recommends -y \
 RUN apt-get install --no-install-recommends -y \
     vim
 
+COPY main.sh /main.sh
+
 # Open Bash
 CMD ["/bin/bash"]
