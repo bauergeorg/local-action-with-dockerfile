@@ -25,11 +25,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       #- uses: actions/checkout@v2
       # Runs a build job
-      - name: Build Docker
-        run: |
-            ls
-            docker build --tag docker-img.
-            docker run -it -d --name docker-ctr dockerimg
+      - name: List Dir
+        run: ls
+      - name: Build Image
+        run: docker build --file Dockerfile --tag docker-img .
+      - name: Run Container
+        run: docker run -it -d --name docker-ctr docker-img
       - name: Run a one-line script
         run: docker exec -it docker-ctr python3 build.py
       - name: Upload result of build job
