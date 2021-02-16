@@ -23,10 +23,12 @@ jobs:
     steps:
       # Runs a test job
       - name: haha
-        run: /bin/bash ls
+        run: ls
+      - name: Check out repository
+        uses: actions/checkout@v2
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: test
-        uses: ./.actions
+        uses: ./.github/actions/my-action
       # build job
       - name: Upload result of build job
         uses: actions/upload-artifact@v2
