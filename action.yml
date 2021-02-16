@@ -1,33 +1,16 @@
 # action.yml
-name: 'Docker Run Action'
-description: 'Run a command in a new container'
+name: 'Docker World'
+description: 'Greet someone and record the time'
 inputs:
-  image:
-    description: 'Image'
+  who-to-greet:  # id of input
+    description: 'Who to greet'
     required: true
-  options:
-    description: 'Options'
-    required: false
-  run:
-    description: 'Run command in container'
-    required: false
-  shell:
-    description: 'Use a specific shell'
-    required: false
-    default: sh
-  registry:
-    description: 'Registry'
-    required: false
-  username:
-    description: 'Username'
-    required: false
-  password:
-    description: 'Password'
-    required: false
-  docker_network:
-    description: 'Docker Network ID'
-    default: ${{ job.container.network }}
-    retuired: false
+    default: 'World'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
