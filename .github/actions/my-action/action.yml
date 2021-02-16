@@ -4,4 +4,3 @@ description: 'A own docker container created by a dockerfile'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  entrypoint: 'main.sh'
